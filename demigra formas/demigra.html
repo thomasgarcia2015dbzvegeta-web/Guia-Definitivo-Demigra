@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enciclopédia Demigra - As 12 Formas</title>
+    <style>
+        /* Estilo Geral Sombrio (Reino dos Demônios) */
+        body {
+            background-color: #0b0813;
+            color: #e2e0eb;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #180d2b, #0b0813);
+            border-bottom: 3px solid #ff0055;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(255, 0, 85, 0.2);
+        }
+
+        header h1 {
+            color: #ff0055;
+            margin: 0;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
+        }
+
+        header p {
+            color: #a39ec4;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        /* Container dos Cards */
+        .grid-formas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Estilo de cada Card de Forma */
+        .card-forma {
+            background-color: #141024;
+            border: 2px solid #2a1f4d;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .card-forma:hover {
+            transform: translateY(-5px);
+            border-color: #9d00ff;
+            box-shadow: 0 5px 20px rgba(157, 0, 255, 0.4);
+        }
+
+        /* Espaço para a Imagem */
+        .img-container {
+            width: 100%;
+            height: 220px;
+            background-color: #07050d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid #2a1f4d;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Texto do Card */
+        .info-container {
+            padding: 20px;
+        }
+
+        .numero-forma {
+            display: inline-block;
+            background-color: #ff0055;
+            color: white;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        .nome-forma {
+            margin: 0 0 10px 0;
+            color: #00ffcc;
+            font-size: 1.3em;
+        }
+
+        .descricao-forma {
+            color: #b1adcc;
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin: 0;
+        }
+              /* Estilos das Barras de Status Compactas */
+        .status-container {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #2a1f4d;
+        }
+        .status-titulo {
+            display: block;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: #a39ec4;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .status-item {
+            margin-bottom: 8px;
+        }
+        .status-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: #b1adcc;
+            margin-bottom: 3px;
+        }
+        .status-label span {
+            font-weight: bold;
+            color: #e2e0eb;
+        }
+        .barra-bg {
+            background-color: #07050d;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            width: 100%;
+        }
+        .barra-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease-in-out;
+        }
+        /* Estilos do Menu Superior */
+        .nav-site {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #141024;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #2a1f4d;
+            margin-bottom: 20px;
+        }
+        .nav-link {
+            color: #e2e0eb;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #00ffcc;
+        }
+        /* Estilos da Seção de Introdução */
+        .secao-intro {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            background-color: #141024;
+            border-left: 4px solid #ff0055;
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .secao-intro h2 {
+            margin-top: 0;
+            color: #ff0055;
+            font-size: 1.6em;
+            text-transform: uppercase;
+        }
+        .secao-intro p {
+            color: #b1adcc;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .secao-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Guia Definitivo: As 12 Formas de Demigra</h1>
+        <p>Explore a evolução cronológica do Deus Demônio através das linhas temporais dos jogos.</p>
+    </header>
+
+
+    <!-- Barra de Navegação Superior -->
+    <nav class="nav-site">
+        <a href="#visao-geral" class="nav-link">Visão Geral</a>
+        <a href="#galeria-formas" class="nav-link">Galeria de Formas</a>
+        <a href="#curiosidades" class="nav-link">Curiosidades</a>
+<a href="#aparicao-games" class="nav-link">Aparição Nos Jogos</a>
+    </nav>
+    <!-- Seção de Visão Geral -->
+    <section id="visao-geral" class="secao-intro">
+        <h2>Quem é Demigra?</h2>
+        <p>
+            Demigra estreou originalmente como o grande antagonista de <strong>Dragon Ball Xenoverse</strong>. Há 75 milhões de anos, ele era um prodígio entre os magos celestiais do Palácio Divino ao lado de Chronoa. Consumido pela ambição de dominar o tempo e reescrever a história à sua imagem, ele tentou usurpar o fator temporal e acabou banido para o Reino dos Demônios. 
+        </p>
+      <hr>
+        <p>
+            Ao longo de suas aparições nos jogos e em <em>Super Dragon Ball Heroes</em>, Demigra se provou um estrategista implacável que não hesita em trair aliados e deuses para absorver fontes de energia proibidas, evoluindo de um feiticeiro exilado ao posto definitivo de Rei das Trevas.
+        </p>
+    </section>
+
+    <div id="galeria-formas"class="grid-formas">
+
+        <!-- 1. Forma Jovem (Palácio Divino) -->
+        <div class="card-forma">
+            <div class="img-container">
+                <!-- SUBSTITUA O LINK ABAIXO PELO NOME DO SEU ARQUIVO DE IMAGEM -->
+                <img src="forma1_jovem_palacio.jpg" alt="Demigra Forma Jovem Palácio Divino">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 01</span>
+                <h2 class="nome-forma">Forma Jovem (Palácio Divino)</h2>
+                <p class="descricao-forma">Visual original de 75 milhões de anos atrás, quando ele trabalhava de forma pacífica no Palácio Divino ao lado de Chronoa. Usa túnica escura com detalhes brancos.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>40%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 40%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>20%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 20%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>45%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 45%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 2. Forma Jovem (Início da Corrupção) -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="forma2_jovem_corrupcao.png" alt="Demigra Forma Jovem Corrupção">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 02</span>
+                <h2 class="nome-forma">Forma Jovem (Início da Corrupção)</h2>
+                <p class="descricao-forma">Ainda jovem, usando o traje branco e azul clássico e um poder maior que sua forma base tradicional. Esta é a versão do início de sua rebelião contra os deuses.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>50%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 50%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>30%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 30%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>50%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 50%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 3. Deus Demônio (Demon God) -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="forma3_demon_god.jpg" alt="Deus Demônio Demigra">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 03</span>
+                <h2 class="nome-forma">Deus Demônio (Demon God)</h2>
+                <p class="descricao-forma">Forma padrão vista em Xenoverse 1. O cabelo vermelho ganha formato de 3 chifres flamejantes e ele passa a ostentar a tiara dourada na testa.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>75%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 75%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>65%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 65%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>70%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 70%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 4. Deus Demônio (Tokitoki Absorvido) -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="forma4_tokitoki.jpg" alt="Demigra Tokitoki Absorvido">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 04</span>
+                <h2 class="nome-forma">Deus Demônio (Tokitoki Absorvido)</h2>
+                <p class="descricao-forma">Sem mudanças físicas aparentes na fisionomia, mas envolto por um Ki esmagador após engolir o pássaro divino e alcançar controle total do tempo.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>90%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 90%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>70%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 70%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>85%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 85%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 5. Forma Final / Gigante -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="forma5_gigante.jpg" alt="Demigra Forma Final Gigante">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 05</span>
+                <h2 class="nome-forma">Forma Final / Gigante</h2>
+                <p class="descricao-forma">O monstro bípede colossal azul e reptiliano com asas pretas. Foco total em força física bruta e destruição em massa no clímax de Xenoverse.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>80%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 80%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>95%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 95%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>40%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 40%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 6. Forma Makyouka -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="forma6_makyouka.jpg" alt="Demigra Forma Makyouka">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 06</span>
+                <h2 class="nome-forma">Forma Makyouka</h2>
+                <p class="descricao-forma">Estado híbrido esguio gerado por aprimoramento mágico. Apresenta pele cinza, peito nu, cauda azul e o chamativo cabelo rosa/magenta espetado para cima.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>88%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 88%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>75%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 75%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>95%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 95%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 7. Rei das Trevas (Inicial/Normal) -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="forma8_potencia_maxima.jpg" alt="Demigra Rei das Trevas Inicial">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 07</span>
+                <h2 class="nome-forma">Rei das Trevas (Inicial/Normal)</h2>
+                <p class="descricao-forma">Visual clássico de braços cruzados com mangas pretas bufantes e capa vermelha real, logo após usurpar o Fator Sombrio de Mechikabura.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>92%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 92%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>85%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 85%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>88%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 88%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 8. Rei das Trevas (Potência Máxima) -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="Dark_King_Demigra_stage_2.png" alt="Demigra Rei das Trevas Potência Máxima">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 08</span>
+                <h2 class="nome-forma">Rei das Trevas (Potência Máxima)</h2>
+                <p class="descricao-forma">Corpo extremamente musculoso carregado de poder sombrio. Ele assume a icônica coroa de chifres dourados na testa e manoplas cinzas.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>96%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 96%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>98%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 98%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>90%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 90%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 9. Poder do Tempo Desencadeado -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="forma9_tempo_desencadeado.jpg" alt="Demigra Poder do Tempo Desencadeado">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 09</span>
+                <h2 class="nome-forma">Poder do Tempo Desencadeado</h2>
+                <p class="descricao-forma">A variação com manoplas pretas pesadas, cauda e marcas escuras no peito semelhantes a sementes biológicas. O auge de sua fusão de poderes.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>100%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 100%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>100%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 100%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>100%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 100%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 10. Miragem de Demigra -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="forma10_miragem.jpg" alt="Miragem de Demigra">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 10</span>
+                <h2 class="nome-forma">Miragem de Demigra</h2>
+                <p class="descricao-forma">A projeção translúcida em forma de sombra e Ki roxo/rosa. Usada para se comunicar e lutar através das fendas temporais enquanto estava selado.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>35%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 35%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>10%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 10%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>60%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 60%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 10. Miragem de Demigra -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="Demigra_in_space.jpg" alt="Miragem de Demigra">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 11</span>
+                <h2 class="nome-forma">Miragem de Demigra (2)</h2>
+                <p class="descricao-forma">Um Guerreiro Artificial criado pelo próprio Demigra usando magia. Usado para lutar através da história enquanto está selado na Fenda Temporal em Dragon Ball Xenoverse.</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>45%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 45%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>30%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 30%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>45%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 45%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+ <!-- 10. Demigra Jovem poder total -->
+        <div class="card-forma">
+            <div class="img-container">
+                <img src="forma7_rei_trevas.jpg" alt="Demigra (Jovem) Poder Total">
+            </div>
+            <div class="info-container">
+                <span class="numero-forma">Forma 12</span>
+                <h2 class="nome-forma">Demigra (Jovem) Poder Total</h2>
+                <p class="descricao-forma">Demigra jovem, mas com seu cajado, usando seu traje azul-turquesa tradicional, cabelo espetado e um poder muito maior</p>
+            </div>
+                      <!-- Seção de Status do Card -->
+            <div class="status-container">
+                <span class="status-titulo">Status de Poder</span>
+                
+                <div class="status-item">
+                    <span class="status-label">Magia / Ki <span>55%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 55%; background-color: #ff0055;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Força Física <span>34%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 34%; background-color: #00ffcc;"></div></div>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-label">Velocidade <span>36%</span></span>
+                    <div class="barra-bg"><div class="barra-fill" style="width: 36%; background-color: #9d00ff;"></div></div>
+                </div>
+            </div>
+
+        </div>
+</section>
+
+
+<section id="curiosidades" class="secao-intro">
+<h2>Curiosidades Sobre Demigra:</h2>
+<h1 style="font-size: 20px"> • Origem De Seu Nome: </h1>
+<p><strong> 1- Origem Culinária:</strong> O nome de Demigra vem de "demi-glace", um molho tradicional da culinária francesa, seguindo a famosa tradição de Akira Toriyama (e dos jogos da franquia) de nomear personagens com trocadilhos baseados em comida. </p>
+<br>
+<p><strong>2- Conexão Com "Demiurgo":</strong> Também faz referência a demiurgo, um conceito filosófico/divino de um ser criador do universo, refletindo seu desejo de reescrever a história.</p>
+
+</section>
+
+<section id="curiosidades" class="secao-intro">
+<hr>
+<br>
+<br>
+<h1 style="font-size: 20px"> • Seu Passado Com A Kaioshin do Tempo: </h1>
+<p><strong> 1- Ex-Guardião:</strong>
+Antes de se tornar um vilão corrompido, Demigra foi um dos guardiões do Pássaro do Tempo (TokiToki) no reino celestial, trabalhando lado a lado com Chronoa (a Kaioshin do Tempo).</p>
+<br>
+<p><strong>2- Trição: </strong> Ele tentou roubar TokiToki para controlar o tempo a seu bel-prazer, o que levou Chronoa a travi-lo e bani-lo para a Rachadura do Tempo por 75 milhões de anos.</p>
+</section>
+<section id="curiosidades" class="secao-intro">
+<hr>
+<br>
+<br>
+<h1 style="font-size: 20px"> • Poder Absurdo: </h1>
+<p><strong>1- Apagamento Da Existência </strong>  Em sua forma de Deus Demônio Gigante, ele adquire um poder temporal tão vasto que consegue ameaçar apagar a existência de seus alvos ao longo de toda a história do multiverso. </p>
+<p><strong>2- Controle Mental Temporal: </strong> Ele foi capaz de manipular à distância figuras formidáveis como Freeza, Cell e Majin Boo nas linhas temporais distorcidas.Ele foi capaz de manipular à distância figuras formidáveis como Freeza, Cell e Majin Boo nas linhas temporais distorcidas.</p>
+</section>
+</div>
+<section class="secao-intro">
+<h2 style= "color: LightBlue;"> • Aparição Em Dragon Ball Xenoverse 2: </h2>
+<p><strong> 1- Aparição Na Legend Pattrol: </strong> Usando a DLC "Legend Pattrol Pack, você pode jogar toda a campanha principal de Dragon Ball Xenoverse, em que Demigra, o vilão principal, aparece como chefe em sua forma Deus Demônio (Demon God) e posteriormente na sua Forma Final Monstro Gigante como o chefe final da campanha principal da Legend Pattrol (Patrulha Lendária). </p>
+<br>
+<hr>
+<br>
+<p><strong> 2- Como Personagem Jogável: </strong> Você pode comprar o Presente "Demigra" na Loja De Medalhas e entregar para Fu, em baixo da Fenda Temporal, fazendo isso, você pode usar o Demigra Demon God como personagem jogável em modos específicos: No Assalto Cristal (Crystal Raid), Duplo e Solo, e no Treinamento (Training).</p>
+</section>
+<section id="aparicao-games" class="secao-intro">
+<h2 style= "font-size: 40px;"> Aparição De Demigra Nos Jogos: </h2>
+<h1 style= "color: LightGreen; font-size: 25px;"> 1. DRAGON BALL XENOVERSE (2015) </h1>
+<p> <strong> • Papel: </strong> Como explicado acima, ele é o antagonista principal e chefe final. </p>
+<p> <strong> • Detalhes: </strong> O jogo marca a estreia do personagem na franquia. Demigra tenta escapar da sua prisão na Rachadura do Tempo (onde foi selado pela Kaioshin do Tempo por 75 milhões de anos) distorcendo momentos históricos marcantes de Dragon Ball para acumular energia. Ele possui formas alternativas ao longo das batalhas, incluindo sua icônica Forma Final de monstro gigante.</p>
+<h1 style= "color: LightGreen; font-size: 25px;"> 2. DRAGON BALL XENOVERSE 2 (2016) </h1>
+<p> <strong> • Papel: </strong> Aparições especiais e conteúdo expandido. </p>
+<p> <strong> • Detalhes: </strong> Como explicado acima, embora não seja o vilão do modo história principal deste segundo jogo, ele faz aparições em cenas de computação gráfica. Além disso, ele foi integrado jogavelmente através de atualizações gratuitas (no modo Coliseu de Heróis) e a sua saga original do primeiro jogo foi adaptada na <strong>DLC Legend Patrol Pack.</strong> </p>
+</div>
+<h1 style= "color: LightGreen; font-size: 25px;"> 3. Franquia Dragon Ball Heroes / Super Dragon Ball Heroes </h1>
+<p> Este é o ecossistema onde Demigra teve o maior desenvolvimento e o maior número de transformações, aparecendo nas seguintes versões do jogo: </p>
+<p> <strong> • Dragon Ball Heroes (Arcade - exclusivo do Japão): </strong> Introduzido como chefe e depois como personagem jogável em cartas a partir da expansão God Mission 7 (GDM7). Ganhou diversas formas exclusivas como a forma Makyouka (Aprimorada por Magia) nas missões seguintes. </p>
+<p> <strong> Super Dragon Ball Heroes: World Mission (Nintendo Switch / PC - 2019): </strong>O jogo que compilou as cartas dos arcades para o Ocidente. Demigra aparece tanto no modo história quanto como uma carta coletável e utilizável em combate.</p>
+<p> <strong> Expansões Recentes de Arcade (Universe Mission, Big Bang Mission e Ultra God Mission): </strong> Onde ele retorna com visuais repaginados e atinge o ápice do seu poder, assumindo o manto de Rei das Trevas Demigra (Dark King Demigra). </p> 
+</body>
+</html>
